@@ -1,12 +1,15 @@
 import { Router } from "express";
 import { authenticate } from "../middlewares/auth.middleware";
-import { upload } from "../middlewares/upload.middleware";
+
 import {
   createTransaction,
   getTransactionById,
   getTransactions,
   updateTransaction,
 } from "../controllers/transaction.controller";
+import multer from "multer";
+
+const upload = multer();
 
 const router = Router();
 
